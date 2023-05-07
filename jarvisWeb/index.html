@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../asset/jarvis.png" type="image/x-icon"> 
+    <link rel="shortcut icon" href="../asset/jarvis.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css">
     <!-- cool font -->
@@ -22,10 +22,10 @@
         <br />
         <button id="sub_btn">Submit</button>
     </div>    
-            <p id="battery"></p> 
-            <p id="internet"></p>
-            <button id="start">Tasks</button>
+        <div class="botton">
+            <button id="start">start</button>
             <button id="stop">stop</button>
+        </div>
             <div class="container">
                 <div class="header">
                     <h1>J.A.R.V.I.S</h1>
@@ -33,9 +33,17 @@
                 <div class="time">
                     <i id="clock" class="fa-regular fa-clock"> 10:00</i>
                 </div>
+                <div class="internet ">
+                   <span> <img src="../asset/internet1.png" class="icon" />
+                    <p id="internet"></p></span>
+                  </div>
+                  <div class="battery ">
+                   <span> <img src="../asset/battery1.png" class="icon" />
+                    <p id="battery"></p></span>
+                  </div>
                 <div class="temp">
                     <h1 id="temp_c" class="reset"></h1>
-                </div> 
+                </div>
                 <div class="cel">
                     <p id="feelslike_c" class="reset"></p>
                 </div>
@@ -45,12 +53,12 @@
                 <div class="reset">
                     <small class="reset" id="region"></small>
                 </div>
-                
+
                 <p id="condition" class="reset"></p>
-                <div class="join">
+                <!-- <div class="join">
                     <input id="search" value="" type="text" name="location" placeholder="Search location" required>
                     <input type="button" value="search" onclick="findWeather()">
-                </div>
+                </div> -->
                 <br>
 
             <select id="selLang" onchange="ChangeLang(this)">
@@ -61,12 +69,12 @@
            
         </div>
             <button type="button" onclick="Send()" id="btnSend">Send</button>
-            <label id="lblSpeak"><input id="chkSpeak" type="checkbox" 
+            <label id="lblSpeak"><input id="chkSpeak" type="checkbox"
                  onclick="SpeechToText()" />chatgpt</label>
 
         <textarea id="txtMsg" rows="5" wrap="soft" style="width: 98%; margin-left: 3px; margin-top: 6px" placeholder="Input Text"></textarea>
     <div id="idContainer">
-            <textarea id="txtOutput" rows="10" style="margin-top: 10px; width: 98%;" 
+            <textarea id="txtOutput" rows="10" style="margin-top: 10px; width: 98%;"
              placeholder="Output" disabled></textarea>
         </div>
         <div id="idText"></div>

@@ -151,53 +151,133 @@ recognition.continuous = true;
 //     formatAMPM(date)
 //   }, 60000);
 
-//   // auto friday
+//   // auto jarvis
+
 
 //   function autoJarvis() {
 //     setTimeout(() => {
 //       recognition.start();
 //     }, 1000);
 //   }
-  // battery
-  let batteryPromise = navigator.getBattery();
-  batteryPromise.then(batteryCallback);
+//   // battery
+//   let batteryPromise = navigator.getBattery();
+//   batteryPromise.then(batteryCallback);
 
-  // internet connectivity
+//   // internet connectivity
 
-    if(navigator.onLine){
-      document.querySelector("#internet").textContent = "online"
-      connectivity = "online"
-    } else {
-      document.querySelector("#internet").textContent = "offline"
-      connectivity = "offline"
-    }
+//     if(navigator.onLine){
+//       document.querySelector("#internet").textContent = "online"
+//       connectivity = "online"
+//     } else {
+//       document.querySelector("#internet").textContent = "offline"
+//       connectivity = "offline"
+//     }
 
-  setInterval(() => {
-    if(navigator.onLine){
-      document.querySelector("#internet").textContent = "online"
-      connectivity = "online"
-    } else {
-      document.querySelector("#internet").textContent = "offline"
-      connectivity = "offline"
-    }
-  }, 60000);
+//   setInterval(() => {
+//     if(navigator.onLine){
+//       document.querySelector("#internet").textContent = "online"
+//       connectivity = "online"
+//     } else {
+//       document.querySelector("#internet").textContent = "offline"
+//       connectivity = "offline"
+//     }
+//   }, 60000);
 
-  function batteryCallback(batteryObject) {
-    printBatteryStatus(batteryObject);
-    setInterval(() => {
-      printBatteryStatus(batteryObject);
-    }, 5000);
+//   function batteryCallback(batteryObject) {
+//     printBatteryStatus(batteryObject);
+//     setInterval(() => {
+//       printBatteryStatus(batteryObject);
+//     }, 5000);
+//   }
+//   function printBatteryStatus(batteryObject) {
+//     document.querySelector("#battery").textContent = `${
+//       (batteryObject.level * 100).toFixed(2)
+//     }%`;
+//     charge = batteryObject.level * 100
+//     if (batteryObject.charging === true) {
+//       document.querySelector(".battery").style.width = "200px";
+//       document.querySelector("#battery").textContent = `${
+//         (batteryObject.level * 100).toFixed(2)
+//       }% Charging`;
+//       chargeStatus = "plugged in"
+//     }
+//   }
+
+// battery
+let batteryPromise = navigator.getBattery();
+batteryPromise.then(batteryCallback);
+
+// internet connectivity
+
+  if(navigator.onLine){
+    document.querySelector("#internet").textContent = "online"
+    connectivity = "online"
+  } else {
+    document.querySelector("#internet").textContent = "offline"
+    connectivity = "offline"
   }
-  function printBatteryStatus(batteryObject) {
+
+setInterval(() => {
+  if(navigator.onLine){
+    document.querySelector("#internet").textContent = "online"
+    connectivity = "online"
+  } else {
+    document.querySelector("#internet").textContent = "offline"
+    connectivity = "offline"
+  }
+}, 60000);
+
+function batteryCallback(batteryObject) {
+  printBatteryStatus(batteryObject);
+  setInterval(() => {
+    printBatteryStatus(batteryObject);
+  }, 5000);
+}
+function printBatteryStatus(batteryObject) {
+  document.querySelector("#battery").textContent = `${
+    (batteryObject.level * 100).toFixed(2)
+  }%`;
+  charge = batteryObject.level * 100
+  if (batteryObject.charging === true) {
+    document.querySelector(".battery").style.width = "200px";
     document.querySelector("#battery").textContent = `${
       (batteryObject.level * 100).toFixed(2)
-    }%`;
-    charge = batteryObject.level * 100
-    if (batteryObject.charging === true) {
-      document.querySelector(".battery").style.width = "200px";
-      document.querySelector("#battery").textContent = `${
-        (batteryObject.level * 100).toFixed(2)
-      }% Charging`;
-      chargeStatus = "plugged in"
-    }
+    }% Charging`;
+    chargeStatus = "plugged in"
   }
+}
+
+// timer
+// setInterval(() => {
+//   let date = new Date();
+//   let hrs = date.getHours();
+//   let mins = date.getMinutes();
+//   let secs = date.getSeconds();
+//   time.textContent = `${hrs} : ${mins} : ${secs}`;
+// }, 1000);
+// };
+
+function formatAMPM(date) {
+var hours = date.getHours();
+var minutes = date.getMinutes();
+var ampm = hours >= 12 ? 'pm' : 'am';
+hours = hours % 12;
+hours = hours ? hours : 12; // the hour '0' should be '12'
+minutes = minutes < 10 ? '0'+minutes : minutes;
+var strTime = hours + ':' + minutes + ' ' + ampm;
+currentTime = strTime
+time.textContent = strTime
+}
+
+formatAMPM(date)
+setInterval(() => {
+formatAMPM(date)
+}, 60000);
+
+// auto friday
+
+function autoJarvis() {
+setTimeout(() => {
+  recognition.start();
+}, 1000);
+}
