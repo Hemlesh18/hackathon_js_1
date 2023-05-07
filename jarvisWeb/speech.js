@@ -198,4 +198,24 @@ function formatAMPM(date) {
       }% Charging`;
       chargeStatus = "plugged in"
     }
-  }
+}
+
+
+const lang = navigator.language;
+
+let datex = new Date();
+let dayNumber 	= date.getDate();
+let monthx 		= date.getMonth();
+
+let dayName 	= date.toLocaleString(lang, {weekday: 'long'});
+let monthName 	= date.toLocaleString(lang, {month: 'long'});
+let year 		= date.getFullYear();
+
+document.querySelector("#month").innerHTML = monthName
+document.querySelector("#day").innerHTML = dayName
+document.querySelector("#date").innerHTML = dayNumber
+document.querySelector("#year").innerHTML = year
+
+document.querySelector(".calendar").addEventListener("click", () => {
+  window.open("https://calendar.google.com/")
+})
