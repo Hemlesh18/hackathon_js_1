@@ -127,7 +127,7 @@ function TextToSpeech(s) {
         }
     }
 
-    if (oSpeechRecognizer || chkSpeak.checked) {
+    if (oSpeechRecognizer && chkSpeak.checked) {
         //do not listen to yourself when talking
         if (oSpeechRecognizer) oSpeechRecognizer.stop();
         chkSpeak.checked = false;}
