@@ -200,4 +200,3 @@ recognition.continuous = true;
       chargeStatus = "plugged in"
     }
   }
-
