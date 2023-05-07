@@ -32,8 +32,10 @@ function userInfo(){
             localStorage.clear()
             localStorage.setItem("jarvis_setup", JSON.stringify(setupInfo))
             setup.style.display="none"
+
             // weather(JSON.parse(localStorage.getItem("jarvis_setup")).location)
         }
+        
     }
 // speech
 function readOut(message){
