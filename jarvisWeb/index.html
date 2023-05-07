@@ -9,11 +9,21 @@
     <link rel="stylesheet" href="style.css">
     <!-- cool font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <title>JARVIS</title>
+    <title>J.A.R.V.I.S</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
-<body onload="OnLoad()">        
+<body onload="OnLoad()">   
+    <div class="jarvis_setup">
+        <label for="">your name</label>
+        <input type="text" >
+        <label for="">GitHub Profile</label>
+        <input type="text" />
+        <br />
+        <button id="sub_btn">Submit</button>
+    </div>    
+            <p id="battery"></p> 
+            <p id="internet"></p>
             <button id="start">Tasks</button>
             <button id="stop">stop</button>
             <div class="container">
@@ -64,5 +74,7 @@
 <script src="./weather.js"></script>
 <script src="./chatgpt.js"></script>
 <script src="./speech.js"></script>
+
+
 </body>
 </html>
