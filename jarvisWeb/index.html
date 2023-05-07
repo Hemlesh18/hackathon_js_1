@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- cool font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <title>JARVIS</title>
+    <title>J.A.R.V.I.S</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -18,36 +18,60 @@
     <div class="header">
         <h1>J.A.R.V.I.S</h1>
     </div>
-    <div class="temp">
-        <h1 id="temp_c" class="reset"></h1>
-    </div>
-    <div class="cel">
-        <p id="feelslike_c" class="reset"></p>
-    </div>
-    <div class="name">
-        <h2 id="name" class="reset"></h2>
-    </div>
-    <div class="reset">
-        <small class="reset" id="region"></small>
-    </div>
-    <p id="condition" class="reset"></p>
-    <div class="join">
+    <div class="clock cont">
+        <img src="../asset/clock1.png" class="icon" />
+        <p id="time"></p>
+      </div>
+      <div class="internet cont">
+        <img src="../asset/internet1.png" class="icon" />
+        <p id="internet"></p>
+      </div>
+      <div class="battery cont">
+        <img src="../asset/battery1.png" class="icon" />
+        <p id="battery"></p>
+      </div>
+    <div class="weatherInfo">
+        <div class="temp">
+            <h1 id="temp_c" class="reset"></h1>
+        </div>
+        <div class="cel">
+            <p id="feelslike_c" class="reset"></p>
+        </div>
+        <div class="name">
+            <h2 id="name" class="reset"></h2>
+        </div>
+        <div class="reset">
+            <small class="reset" id="region"></small>
+        </div>
+
+       <p id="condition" class="reset"></p>
+    <!-- <div class="join">
         <input id="search" value="" type="text" name="location" placeholder="Search location" required>
         <input type="button" value="search" onclick="findWeather()">
+    </div> -->
+   </div>
+
+    <div class="jarvis_setup">
+        <label for="">your name</label>
+        <input type="text" >
+        <br />
+        <label for="">Your Location</label>
+        <input type="text" />
+        <br />
+        <label for="">GitHub Profile</label>
+        <input type="text" />
+        <br />
+        <button id="sub_btn">Submit</button>
     </div>
-    <br>
-    <button id="start">start</button>
-    <button id="stop">stop</button>
-    <button id="speak">speak out</button>
+    <div class="button">
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+        <button id="speak">speak out</button>
+    </div>
 </div>
 
-
-
-
-
-
-<script src="weather.js"></script>
-<script src="speech.js"></script>
+    <script src="weather.js"></script>
+    <script src="speech.js"></script>
 </body>
 </html>
 
