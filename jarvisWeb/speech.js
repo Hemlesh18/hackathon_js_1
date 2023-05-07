@@ -3,6 +3,7 @@ const  startBtn = document.querySelector("#start");
 const  stopBtn = document.querySelector("#stop");
 const  speakBtn = document.querySelector("#speak");
 
+
 // speech
 function readOut(message){
     let speech = new SpeechSynthesisUtterance();
@@ -67,7 +68,7 @@ recognition.onresult = function(event){
             console.log(data)
             readOut(data.setup)
             setTimeout(() => {
-                readOut(data.punchline)
+                readOut(data.punchline+" ha ha ha ")
             }, 3000);
         })
     }
