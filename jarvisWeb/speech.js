@@ -1,7 +1,7 @@
 //elements
 const  startBtn = document.querySelector("#start");
 const  stopBtn = document.querySelector("#stop");
-const  speakBtn = document.querySelector("#speak");
+// const  speakBtn = document.querySelector("#speak");
 
 
 // speech
@@ -15,6 +15,7 @@ function readOut(message){
     window.speechSynthesis.speak(speech)
     console.log("speaking out")
 }
+
 //speech recongnition setup
  let SpeechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
 // console.log(new SpeechRecognition());
@@ -83,11 +84,12 @@ stopBtn.addEventListener("click", ()=>{
 
 // continuos
 recognition.continuous = true;
+}
 
 // some kind of example to see if it works
-speakBtn.addEventListener("click", ()=>{
-    readOut("hello bro")
-})}
+// speakBtn.addEventListener("click", ()=>{
+//     readOut("hello bro")
+// })}
 
 // window.onload = function(){
 //     readOut("    ");
