@@ -15,7 +15,7 @@ function readOut(message){
     console.log("speaking out")
 }
 //speech recongnition setup
-let SpeechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
+ let SpeechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
 // console.log(new SpeechRecognition());
 let recognition = new SpeechRecognition()
 // start
@@ -42,6 +42,7 @@ recognition.onresult = function(event){
         readOut("opening youtube")
         // (method) open(url?: string | URL
         window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ",'_blank');
+
     }
     if (transcript.includes(`search`)){
         let search = transcript.replace("search", "")
@@ -70,6 +71,7 @@ recognition.onresult = function(event){
             }, 3000);
         })
     }
+
 //stop
 recognition.onend = function(){
     console.log('voice is deactivated');
