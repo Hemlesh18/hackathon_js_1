@@ -31,6 +31,7 @@ recognition.onresult = function(event){
     please don't remove this code
     !important
     */
+
     if (transcript.includes("open youtube")||transcript.includes("youtube")){
         readOut("opening youtube")
         // (method) open(url?: string | URL 
@@ -46,6 +47,11 @@ recognition.onresult = function(event){
         let search = transcript.replace("play", "")
         readOut(`playing ${search}`)
         window.open('https://www.youtube.com/results?search_query=' + search,'_blank');
+    }
+    if (transcript.includes("wiki")){
+        let search = transcript.replace("wiki", "")
+        readOut(`searching ${search}`)
+        window.open('https://en.wikipedia.org/wiki/A/search=' + search,'_blank');
     }
 
 };
