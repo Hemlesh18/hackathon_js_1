@@ -10,46 +10,27 @@
     <title>J.A.R.V.I.S</title>
 </head>
 <body>
-    <h1>we are building jarvis</h1>
-<div class="machine">
-    <div class="temp">
-        <p id="location"></p>
-        <p id="country"></p>
-        <p id="weatherTemp"></p>
-        <p id="weatherDetail"></p>
-        <p id="oTemp"></p>
-        <p id="feelingLikeTemp"></p>
-        <p id="minT"></p>
-        <p id="maxT"></p>
-        <img src="" id="weatherIcon" />
-    </div>
-</div>
+<h1>we are building jarvis</h1>
 
-<div class="jarvis_setup">
-    <label for="">your name</label>
-    <input type="text" >
-    <br />
-    <label for="">Your Location</label>
-    <input type="text" />
-    <br />
-    <label for="">GitHub Profile</label>
-    <input type="text" />
-    <br />
-    <button id="sub_btn">Submit</button>
-</div>
-
-
-
-<button id="start">start</button>
-<button id="stop">stop</button>
-<button id="speak">speak out</button>
+    <h1 id="temp_c" class="reset"></h1>
+    <p id="feelslike_c" class="reset"></p>
+    <h2 id="name" class="reset"></h2>
+    <small class="reset" id="region"></small>
+    <p id="condition" class="reset"></p>
+    <input id="search" value="" type="text" name="location" placeholder="Search location" required>
+    <input type="button" value="search" onclick="findWeather()">
+    <br>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <button id="speak">speak out</button>
 
 
 
 
 
 
-    <script src="main.js"></script>
+<script src="weather.js"></script>
+<script src="speech.js"></script>
 </body>
 </html>
 
