@@ -1,128 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- link img -->
-    <link rel="shortcut icon" href="../asset/jarvis.png" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="shortcut icon" href="../asset/jarvis.png" type="image/x-icon"> 
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css">
     <!-- cool font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <title>J.A.R.V.I.S</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
-<body>
-<div class="container">
-    <div class="header">
-        <h1>J.A.R.V.I.S</h1>
-    </div>
-    <div class="clock cont">
-        <img src="../asset/clock1.png" class="icon" />
-        <p id="time"></p>
-      </div>
-      <div class="internet cont">
-        <img src="../asset/internet1.png" class="icon" />
-        <p id="internet"></p>
-      </div>
-      <div class="battery cont">
-        <img src="../asset/battery1.png" class="icon" />
-        <p id="battery"></p>
-      </div>
-    <div class="weatherInfo">
-        <div class="temp">
-            <h1 id="temp_c" class="reset"></h1>
-        </div>
-        <div class="cel">
-            <p id="feelslike_c" class="reset"></p>
-        </div>
-        <div class="name">
-            <h2 id="name" class="reset"></h2>
-        </div>
-        <div class="reset">
-            <small class="reset" id="region"></small>
-        </div>
-
-       <p id="condition" class="reset"></p>
-    <!-- <div class="join">
-        <input id="search" value="" type="text" name="location" placeholder="Search location" required>
-        <input type="button" value="search" onclick="findWeather()">
-    </div> -->
-   </div>
-
+<body onload="OnLoad()">   
     <div class="jarvis_setup">
         <label for="">your name</label>
         <input type="text" >
-        <br />
-        <label for="">Your Location</label>
-        <input type="text" />
-        <br />
         <label for="">GitHub Profile</label>
         <input type="text" />
         <br />
         <button id="sub_btn">Submit</button>
-    </div>
-    <div class="button">
-        <button id="start">start</button>
-        <button id="stop">stop</button>
-        <button id="speak">speak out</button>
-    </div>
-</div>
+    </div>    
+            <p id="battery"></p> 
+            <p id="internet"></p>
+            <button id="start">Tasks</button>
+            <button id="stop">stop</button>
+            <div class="container">
+                <div class="header">
+                    <h1>J.A.R.V.I.S</h1>
+                </div>
+                <div class="time">
+                    <i id="clock" class="fa-regular fa-clock"> 10:00</i>
+                </div>
+                <div class="temp">
+                    <h1 id="temp_c" class="reset"></h1>
+                </div> 
+                <div class="cel">
+                    <p id="feelslike_c" class="reset"></p>
+                </div>
+                <div class="name">
+                    <h2 id="name" class="reset"></h2>
+                </div>
+                <div class="reset">
+                    <small class="reset" id="region"></small>
+                </div>
+                
+                <p id="condition" class="reset"></p>
+                <div class="join">
+                    <input id="search" value="" type="text" name="location" placeholder="Search location" required>
+                    <input type="button" value="search" onclick="findWeather()">
+                </div>
+                <br>
 
-    <script src="weather.js"></script>
-    <script src="speech.js"></script>
+            <select id="selLang" onchange="ChangeLang(this)">
+                <option value="en-US">English (United States)</option>
+                <option value="fr-FR">French (France)</option>
+            </select>
+
+           
+        </div>
+            <button type="button" onclick="Send()" id="btnSend">Send</button>
+            <label id="lblSpeak"><input id="chkSpeak" type="checkbox" 
+                 onclick="SpeechToText()" />chatgpt</label>
+
+        <textarea id="txtMsg" rows="5" wrap="soft" style="width: 98%; margin-left: 3px; margin-top: 6px" placeholder="Input Text"></textarea>
+    <div id="idContainer">
+            <textarea id="txtOutput" rows="10" style="margin-top: 10px; width: 98%;" 
+             placeholder="Output" disabled></textarea>
+        </div>
+        <div id="idText"></div>
+    </div>
+<script src="./weather.js"></script>
+<script src="./chatgpt.js"></script>
+<script src="./speech.js"></script>
+
+
 </body>
 </html>
-
-
-<!-- <!doctype html>
-<html>
-	<head>
-		<title>JavaScript Speech Recognition</title>
-		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-		<style>
-			.hide { display:none; }
-			.show { display:block;}
-		</style>
-	</head>
-	<body>
-	<h2>JavaScript Speech Recognition</h2>
-        <p>Click on the below button and then allow button and speak something...</p>
-        <button class="btn btn-default" onclick="jsSpeechRecognition()">Speech Search</button>
-	<p><span id="event"></span></p>
-        <div id="result" class="hide"></div>
-		<script>
-		    function jsSpeechRecognition() {
-		        // getting result
-		        var result = document.getElementById("result");
-		        // getting user action
-		        var event = document.getElementById("event");
-                // new speech recognition object
-                var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
-                var recognition = new SpeechRecognition();
-
-                // This runs when the speech recognition service starts
-                recognition.onstart = function() {
-                    event.innerHTML = "Listening .....";
-                };
-
-                recognition.onspeechend = function() {
-                    event.innerHTML = "stopped listening, hope you are done...";
-                    recognition.stop();
-                }
-
-                // This runs when the speech recognition service returns result
-                recognition.onresult = function(event) {
-                    var transcript = event.results[0][0].transcript;
-                    var confidence = event.results[0][0].confidence;
-                    result.innerHTML = "<b>Text:</b> " + transcript + "<br/><strong>Confidence:</strong> "+ confidence*100+"%";
-                    result.classList.remove("hide");
-                };
-
-                 // start speech recognition
-                 recognition.start();
-	        }
-		</script>
-	</body>
-</html> -->

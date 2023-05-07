@@ -1,7 +1,7 @@
 //elements
 const  startBtn = document.querySelector("#start");
 const  stopBtn = document.querySelector("#stop");
-const  speakBtn = document.querySelector("#speak");
+// const  speakBtn = document.querySelector("#speak");
 
 // jarvis setup
 if (localStorage.getItem("jarvis_setup")!== null){
@@ -18,8 +18,7 @@ if (localStorage.getItem("jarvis_setup") === null){
 function userInfo(){
     let setupInfo = {
         name: setup.querySelectorAll("input")[0].value,
-        location: setup.querySelectorAll("input")[1].value,
-        github: setup.querySelectorAll("input")[2].value,
+        github: setup.querySelectorAll("input")[1].value,
         }
 
         let testArr=[]
@@ -33,7 +32,7 @@ function userInfo(){
             localStorage.clear()
             localStorage.setItem("jarvis_setup", JSON.stringify(setupInfo))
             setup.style.display="none"
-            weather(JSON.parse(localStorage.getItem("jarvis_setup")).location)
+            // weather(JSON.parse(localStorage.getItem("jarvis_setup")).location)
         }
     }
 // speech
@@ -47,6 +46,7 @@ function readOut(message){
     window.speechSynthesis.speak(speech)
     console.log("speaking out")
 }
+
 //speech recongnition setup
  let SpeechRecognition = window.speechRecognition || window.webkitSpeechRecognition;
 // console.log(new SpeechRecognition());
@@ -115,47 +115,49 @@ stopBtn.addEventListener("click", ()=>{
 
 // continuos
 recognition.continuous = true;
+}
 
 // some kind of example to see if it works
-speakBtn.addEventListener("click", ()=>{
-    readOut("hello bro")
-})}
+// speakBtn.addEventListener("click", ()=>{
+//     readOut("hello bro")
+// })}
 
 // window.onload = function(){
 //     readOut("    ");
 // };
+// =======
 
 
-// date and time
-let date = new Date();
-let hrs = date.getHours();
-let mins = date.getMinutes();
-let secs = date.getSeconds();
+// // date and time
+// let date = new Date();
+// let hrs = date.getHours();
+// let mins = date.getMinutes();
+// let secs = date.getSeconds();
 
-function formatAMPM(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    currentTime = strTime
-    time.textContent = strTime
-  }
+// function formatAMPM(date) {
+//     var hours = date.getHours();
+//     var minutes = date.getMinutes();
+//     var ampm = hours >= 12 ? 'pm' : 'am';
+//     hours = hours % 12;
+//     hours = hours ? hours : 12; // the hour '0' should be '12'
+//     minutes = minutes < 10 ? '0'+minutes : minutes;
+//     var strTime = hours + ':' + minutes + ' ' + ampm;
+//     currentTime = strTime
+//     time.textContent = strTime
+//   }
 
-  formatAMPM(date)
-  setInterval(() => {
-    formatAMPM(date)
-  }, 60000);
+//   formatAMPM(date)
+//   setInterval(() => {
+//     formatAMPM(date)
+//   }, 60000);
 
-  // auto friday
+//   // auto friday
 
-  function autoJarvis() {
-    setTimeout(() => {
-      recognition.start();
-    }, 1000);
-  }
+//   function autoJarvis() {
+//     setTimeout(() => {
+//       recognition.start();
+//     }, 1000);
+//   }
   // battery
   let batteryPromise = navigator.getBattery();
   batteryPromise.then(batteryCallback);
@@ -198,24 +200,4 @@ function formatAMPM(date) {
       }% Charging`;
       chargeStatus = "plugged in"
     }
-}
-
-
-const lang = navigator.language;
-
-let datex = new Date();
-let dayNumber 	= date.getDate();
-let monthx 		= date.getMonth();
-
-let dayName 	= date.toLocaleString(lang, {weekday: 'long'});
-let monthName 	= date.toLocaleString(lang, {month: 'long'});
-let year 		= date.getFullYear();
-
-document.querySelector("#month").innerHTML = monthName
-document.querySelector("#day").innerHTML = dayName
-document.querySelector("#date").innerHTML = dayNumber
-document.querySelector("#year").innerHTML = year
-
-document.querySelector(".calendar").addEventListener("click", () => {
-  window.open("https://calendar.google.com/")
-})
+  }
