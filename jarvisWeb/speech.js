@@ -282,7 +282,7 @@ function userInfo(){
 
             // weather(JSON.parse(localStorage.getItem("jarvis_setup")).location)
         }
-        
+
     }
 // speech
 function readOut(message){
@@ -404,43 +404,43 @@ time.textContent = `${hrs}:${mins}:${secs}`;
 
   // internet connectivity
 
-    if(navigator.onLine){
-      document.querySelector("#internet").textContent = "online"
-      connectivity = "online"
-    } else {
-      document.querySelector("#internet").textContent = "offline"
-      connectivity = "offline"
-    }
+  //   if(navigator.onLine){
+  //     document.querySelector("#internet").textContent = "online"
+  //     connectivity = "online"
+  //   } else {
+  //     document.querySelector("#internet").textContent = "offline"
+  //     connectivity = "offline"
+  //   }
 
-  setInterval(() => {
-    if(navigator.onLine){
-      document.querySelector("#internet").textContent = "online"
-      connectivity = "online"
-    } else {
-      document.querySelector("#internet").textContent = "offline"
-      connectivity = "offline"
-    }
-  }, 60000);
+  // setInterval(() => {
+  //   if(navigator.onLine){
+  //     document.querySelector("#internet").textContent = "online"
+  //     connectivity = "online"
+  //   } else {
+  //     document.querySelector("#internet").textContent = "offline"
+  //     connectivity = "offline"
+  //   }
+  // }, 60000);
 
-  function batteryCallback(batteryObject) {
-    printBatteryStatus(batteryObject);
-    setInterval(() => {
-      printBatteryStatus(batteryObject);
-    }, 5000);
-  }
-  function printBatteryStatus(batteryObject) {
-    document.querySelector("#battery").textContent = `${
-      (batteryObject.level * 100).toFixed(2)
-    }%`;
-    charge = batteryObject.level * 100
-    if (batteryObject.charging === true) {
-      document.querySelector(".battery").style.width = "200px";
-      document.querySelector("#battery").textContent = `${
-        (batteryObject.level * 100).toFixed(2)
-      }% Charging`;
-      chargeStatus = "plugged in"
-    }
-  }
+  // function batteryCallback(batteryObject) {
+  //   printBatteryStatus(batteryObject);
+  //   setInterval(() => {
+  //     printBatteryStatus(batteryObject);
+  //   }, 5000);
+  // }
+  // function printBatteryStatus(batteryObject) {
+  //   document.querySelector("#battery").textContent = `${
+  //     (batteryObject.level * 100).toFixed(2)
+  //   }%`;
+  //   charge = batteryObject.level * 100
+  //   if (batteryObject.charging === true) {
+  //     document.querySelector(".battery").style.width = "200px";
+  //     document.querySelector("#battery").textContent = `${
+  //       (batteryObject.level * 100).toFixed(2)
+  //     }% Charging`;
+  //     chargeStatus = "plugged in"
+  //   }
+  // }
 
 // battery
 let batteryPromise = navigator.getBattery();

@@ -21,7 +21,7 @@ async function getName(latitude, longitude) {
     var res = await fetch(url);
     var data = await res.json();
     var location = data[0].name + `,` + data[0].country+`&aqi=yes`;
-    fetchData(location);    
+    fetchData(location);
 }
 
 function findWeather() {
@@ -49,14 +49,14 @@ function setValues(data) {
 
     setter = document.querySelector("#calender");
     setter.innerHTML = data.location.localtime.split(" ")[0];
-    
+
     setter = document.getElementById('name');
     setter.innerHTML = data.location.name;
 
     setter = document.getElementById("region");
     setter.innerHTML = data.location.region+`, `+data.location.country;
     setter = document.getElementById("feelslike_c");
-    setter.innerHTML = "Rmp: "+data.current.feelslike_c + `&#176`;
+    setter.innerHTML = "RoomTemp: "+data.current.feelslike_c + `&#176`;
 
     setter = document.getElementById("condition");
     setter.innerHTML = data.current.condition.text;
