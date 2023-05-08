@@ -36,7 +36,7 @@ function userInfo(){
 
             // weather(JSON.parse(localStorage.getItem("jarvis_setup")).location)
         }
-        
+
     }
 // speech
 function readOut(message){
