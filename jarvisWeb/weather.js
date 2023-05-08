@@ -47,8 +47,8 @@ function setValues(data) {
     var setter = document.getElementById("temp_c");
     setter.innerHTML = data.current.temp_c + `&#176`;
 
-    setter = document.querySelector("#clock");
-    setter.innerHTML = data.location.localtime;
+    setter = document.querySelector("#calender");
+    setter.innerHTML = data.location.localtime.split(" ")[0];
     
     setter = document.getElementById('name');
     setter.innerHTML = data.location.name;
@@ -56,7 +56,7 @@ function setValues(data) {
     setter = document.getElementById("region");
     setter.innerHTML = data.location.region+`, `+data.location.country;
     setter = document.getElementById("feelslike_c");
-    setter.innerHTML = data.current.feelslike_c + `&#176`;
+    setter.innerHTML = "Rmp: "+data.current.feelslike_c + `&#176`;
 
     setter = document.getElementById("condition");
     setter.innerHTML = data.current.condition.text;

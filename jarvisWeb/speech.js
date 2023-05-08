@@ -1,6 +1,7 @@
 //elements
 const  startBtn = document.querySelector("#start");
 const  stopBtn = document.querySelector("#stop");
+const time = document.querySelector("#flock");
 // const  speakBtn = document.querySelector("#speak");
 
 // jarvis setup
@@ -135,37 +136,23 @@ recognition.continuous = true;
 
 
 // // date and time
-// let date = new Date();
-// let hrs = date.getHours();
-// let mins = date.getMinutes();
-// let secs = date.getSeconds();
+setInterval(() => {
+let date = new Date();
+let hrs = date.getHours();
+let mins = date.getMinutes();
+let secs = date.getSeconds();
+time.textContent = `${hrs}:${mins}:${secs}`;
+}, 1000);
 
-// function formatAMPM(date) {
-//     var hours = date.getHours();
-//     var minutes = date.getMinutes();
-//     var ampm = hours >= 12 ? 'pm' : 'am';
-//     hours = hours % 12;
-//     hours = hours ? hours : 12; // the hour '0' should be '12'
-//     minutes = minutes < 10 ? '0'+minutes : minutes;
-//     var strTime = hours + ':' + minutes + ' ' + ampm;
-//     currentTime = strTime
-//     time.textContent = strTime
-//   }
-
-//   formatAMPM(date)
-//   setInterval(() => {
-//     formatAMPM(date)
-//   }, 60000);
-
-//   // auto jarvis
+  // auto jarvis
 
 
-  // function autoJarvis() {
-  //   setTimeout(() => {
-  //     recognition.start();
-  //   }, 1000);
-  // }
-  // // battery
+  function autoJarvis() {
+    setTimeout(() => {
+      recognition.start();
+    }, 1000);
+  }
+  // battery
   // let batteryPromise = navigator.getBattery();
   // batteryPromise.then(batteryCallback);
 
