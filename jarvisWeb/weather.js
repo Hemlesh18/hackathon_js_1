@@ -20,7 +20,7 @@ async function getName(latitude, longitude) {
     var url = `https://api.openweathermap.org/geo/1.0/reverse?lat=` + latitude + `&lon=` + longitude + `&limit=5&appid=` + access_key;
     var res = await fetch(url);
     var data = await res.json();
-    var location = data[0].name.split(" ")[0];
+    var location = data[0].name+`,`+data[0].country;
     fetchData(location);    
 }
 
@@ -48,7 +48,7 @@ function setValues(data) {
     setter.innerHTML = data.current.temp_c + `&#176`;
 
     setter = document.querySelector("#clock");
-    setter.innerHTML = data.location.localtime.split(" ")[1];
+    setter.innerHTML = data.location.localtime.split(" ")[1].split(":")[0] + `:` + data.location.localtime.split(" ")[1].split(":")[1];
     
     setter = document.getElementById('name');
     setter.innerHTML = data.location.name;
@@ -60,4 +60,5 @@ function setValues(data) {
 
     setter = document.getElementById("condition");
     setter.innerHTML = data.current.condition.text;
+
 }

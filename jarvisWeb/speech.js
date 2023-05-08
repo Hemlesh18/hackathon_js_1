@@ -69,9 +69,13 @@ recognition.onresult = function(event){
     transcript=transcript.toLowerCase();
     let userdata = localStorage.getItem("jarvis_setup")
     console.log(`words ${transcript}`)
+    if (transcript.includes("github")||transcript.includes("git")||transcript.includes("hub")||transcript.includes("git hub")||transcript.includes("geethub")||transcript.includes("get hub")){
+        readOut("opening github")
+        window.open(JSON.parse(userdata).github,'_blank');
+    }
     // readOut(transcript)
     if (transcript.includes("hi jarvis")||transcript.includes("hello jarvis")||transcript.includes("hey jarvis")||transcript.includes("jarvis")||transcript.includes("hi")||transcript.includes("hello")||transcript.includes("hey")||transcript.includes("hi jarvis how are you")||transcript.includes("hello jarvis how are you")||transcript.includes("hey jarvis how are you")||transcript.includes("jarvis how are you")){
-        readOut("hello sir")
+        readOut("hello i am jarvis")&&readOut("how can i help you")&&readOut("i am listening")
     }
     if (transcript.includes("rick")||transcript.includes("roll")||transcript.includes("rick roll")){
         readOut("opening youtube")
@@ -156,54 +160,54 @@ recognition.continuous = true;
 //   // auto jarvis
 
 
-//   function autoJarvis() {
-//     setTimeout(() => {
-//       recognition.start();
-//     }, 1000);
-//   }
-//   // battery
-//   let batteryPromise = navigator.getBattery();
-//   batteryPromise.then(batteryCallback);
+  // function autoJarvis() {
+  //   setTimeout(() => {
+  //     recognition.start();
+  //   }, 1000);
+  // }
+  // // battery
+  // let batteryPromise = navigator.getBattery();
+  // batteryPromise.then(batteryCallback);
 
-//   // internet connectivity
+  // internet connectivity
 
-//     if(navigator.onLine){
-//       document.querySelector("#internet").textContent = "online"
-//       connectivity = "online"
-//     } else {
-//       document.querySelector("#internet").textContent = "offline"
-//       connectivity = "offline"
-//     }
+    if(navigator.onLine){
+      document.querySelector("#internet").textContent = "online"
+      connectivity = "online"
+    } else {
+      document.querySelector("#internet").textContent = "offline"
+      connectivity = "offline"
+    }
 
-//   setInterval(() => {
-//     if(navigator.onLine){
-//       document.querySelector("#internet").textContent = "online"
-//       connectivity = "online"
-//     } else {
-//       document.querySelector("#internet").textContent = "offline"
-//       connectivity = "offline"
-//     }
-//   }, 60000);
+  setInterval(() => {
+    if(navigator.onLine){
+      document.querySelector("#internet").textContent = "online"
+      connectivity = "online"
+    } else {
+      document.querySelector("#internet").textContent = "offline"
+      connectivity = "offline"
+    }
+  }, 60000);
 
-//   function batteryCallback(batteryObject) {
-//     printBatteryStatus(batteryObject);
-//     setInterval(() => {
-//       printBatteryStatus(batteryObject);
-//     }, 5000);
-//   }
-//   function printBatteryStatus(batteryObject) {
-//     document.querySelector("#battery").textContent = `${
-//       (batteryObject.level * 100).toFixed(2)
-//     }%`;
-//     charge = batteryObject.level * 100
-//     if (batteryObject.charging === true) {
-//       document.querySelector(".battery").style.width = "200px";
-//       document.querySelector("#battery").textContent = `${
-//         (batteryObject.level * 100).toFixed(2)
-//       }% Charging`;
-//       chargeStatus = "plugged in"
-//     }
-//   }
+  function batteryCallback(batteryObject) {
+    printBatteryStatus(batteryObject);
+    setInterval(() => {
+      printBatteryStatus(batteryObject);
+    }, 5000);
+  }
+  function printBatteryStatus(batteryObject) {
+    document.querySelector("#battery").textContent = `${
+      (batteryObject.level * 100).toFixed(2)
+    }%`;
+    charge = batteryObject.level * 100
+    if (batteryObject.charging === true) {
+      document.querySelector(".battery").style.width = "200px";
+      document.querySelector("#battery").textContent = `${
+        (batteryObject.level * 100).toFixed(2)
+      }% Charging`;
+      chargeStatus = "plugged in"
+    }
+  }
 
 // battery
 let batteryPromise = navigator.getBattery();
@@ -244,47 +248,6 @@ function printBatteryStatus(batteryObject) {
     document.querySelector(".battery").style.width = "200px";
     document.querySelector("#battery").textContent = `${
       (batteryObject.level * 100).toFixed(2)
-<<<<<<< HEAD
-    }% Charging`;
-    chargeStatus = "plugged in"
-  }
-}
-
-// timer
-// setInterval(() => {
-//   let date = new Date();
-//   let hrs = date.getHours();
-//   let mins = date.getMinutes();
-//   let secs = date.getSeconds();
-//   time.textContent = `${hrs} : ${mins} : ${secs}`;
-// }, 1000);
-// };
-
-function formatAMPM(date) {
-var hours = date.getHours();
-var minutes = date.getMinutes();
-var ampm = hours >= 12 ? 'pm' : 'am';
-hours = hours % 12;
-hours = hours ? hours : 12; // the hour '0' should be '12'
-minutes = minutes < 10 ? '0'+minutes : minutes;
-var strTime = hours + ':' + minutes + ' ' + ampm;
-currentTime = strTime
-time.textContent = strTime
-}
-
-formatAMPM(date)
-setInterval(() => {
-formatAMPM(date)
-}, 60000);
-
-// auto friday
-
-function autoJarvis() {
-setTimeout(() => {
-  recognition.start();
-}, 1000);
-}
-=======
     }%`;
     charge = batteryObject.level * 100
     if (batteryObject.charging === true) {
@@ -293,5 +256,4 @@ setTimeout(() => {
       }% Charging`;
       chargeStatus = "plugged in"
     }
-  }
->>>>>>> 58e1728a4dd54dcc7425c21b81a2800f3a4b9c1d
+  }}

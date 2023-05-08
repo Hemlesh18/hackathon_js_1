@@ -14,7 +14,7 @@
 <body onload="OnLoad()">
     <div class="jarvis_setup">
         <label for="">your name</label>
-        <input type="text" >
+        <input type="text" ><br>
         <label for="">GitHub Profile</label>
         <input type="text" />
         <br />
@@ -34,11 +34,11 @@
                     <i id="clock" class="fa-regular fa-clock"> 10:00</i>
                 </div>
                 <div class="internet ">
-                   <span> <img src="../asset/internet1.png" class="icon" />
+                   <!-- <span> <img src="../asset/internet1.png" class="icon" /> -->
                     <p id="internet"></p></span>
                   </div>
                   <div class="battery ">
-                   <span> <img src="../asset/battery1.png" class="icon" />
+                   <!-- <span> <img src="../asset/battery1.png" class="icon" /> -->
                     <p id="battery"></p></span>
                   </div>
                 <div class="temp">
@@ -55,7 +55,7 @@
                 </div>
 
                 <p id="condition" class="reset"></p>
-                <!-- <div class="join">
+                <div class="join">
                     <input id="search" value="" type="text" name="location" placeholder="Search location" required>
                     <input type="button" value="search" onclick="findWeather()">
                 </div>
@@ -75,10 +75,11 @@
     <div id="idContainer">
             <textarea id="txtOutput" rows="10" style="margin-top: 10px; width: 98%;"
              placeholder="Output" disabled></textarea>
-        </div>
-        <div id="idText"></div>
-        <textarea id="txtOutput" rows="10" style="margin-top: 10px; width: 98%;" placeholder="Output" disabled></textarea>
     </div>
+        <div id="idText"></div>
+            </div>
+    <footer>
+        <p>© 2021 JARVIS | All rights reserved</p>
 
    <script src="./weather.js"></script>
    <script src="./chatgpt.js"></script>
