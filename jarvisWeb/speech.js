@@ -35,7 +35,7 @@ function userInfo(){
 
             // weather(JSON.parse(localStorage.getItem("jarvis_setup")).location)
         }
-        
+
     }
 // speech
 function readOut(message){
@@ -244,7 +244,6 @@ function printBatteryStatus(batteryObject) {
     document.querySelector(".battery").style.width = "200px";
     document.querySelector("#battery").textContent = `${
       (batteryObject.level * 100).toFixed(2)
-<<<<<<< HEAD
     }% Charging`;
     chargeStatus = "plugged in"
   }
@@ -284,14 +283,3 @@ setTimeout(() => {
   recognition.start();
 }, 1000);
 }
-=======
-    }%`;
-    charge = batteryObject.level * 100
-    if (batteryObject.charging === true) {
-      document.querySelector("#battery").textContent = `${
-        (batteryObject.level * 100).toFixed(2)
-      }% Charging`;
-      chargeStatus = "plugged in"
-    }
-  }
->>>>>>> 58e1728a4dd54dcc7425c21b81a2800f3a4b9c1d
