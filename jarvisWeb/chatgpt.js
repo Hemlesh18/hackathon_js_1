@@ -1,4 +1,4 @@
-var OPENAI_API_KEY = "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";
+var OPENAI_API_KEY = "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";
 var bTextToSpeechSupported = false;
 var bSpeechInProgress = false;
 var oSpeechRecognizer = null
@@ -73,7 +73,7 @@ function Send() {
         }
 
         if (s == "") s = "No response";
-        txtOutput.value += "Chat GPT: " + s;
+        txtOutput.value += "REPLY: " + s;
         TextToSpeech(s);
       }
     }

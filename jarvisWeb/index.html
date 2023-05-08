@@ -16,7 +16,7 @@
 <body onload="OnLoad()">
     <div class="jarvis_setup">
         <label for="">your name</label>
-        <input type="text" >
+        <input type="text" ><br>
         <label for="">GitHub Profile</label>
         <input type="text" />
         <br />
@@ -59,9 +59,17 @@
                 <div class="header">
                     <h1>J.A.R.V.I.S</h1>
                 </div>
-
-
-            <div class="container">
+                <div class="time">
+                    <i id="clock" class="fa-regular fa-clock"> 10:00</i>
+                </div>
+                <div class="internet ">
+                   <!-- <span> <img src="../asset/internet1.png" class="icon" /> -->
+                    <p id="internet"></p></span>
+                  </div>
+                  <div class="battery ">
+                   <!-- <span> <img src="../asset/battery1.png" class="icon" /> -->
+                    <p id="battery"></p></span>
+                  </div>
                 <div class="temp">
                     <h1 id="temp_c" class="reset"></h1>
                 </div>
@@ -93,11 +101,15 @@
             <label id="lblSpeak"><input id="chkSpeak" type="checkbox"
               onclick="SpeechToText()" />chatgpt</label>
 
-        <textarea id="txtMsg" rows="5" wrap="soft" style="width: 98%; margin-left: 3px; margin-top: 6px" placeholder="Input Text"></textarea>
-    <div id="idContainer">
+        <textarea id="txtMsg" rows="5" wrap="soft" style="width: 98%; margin-left: 3px; margin-top: 6px" placeholder="Input Text"></textarea>
+    <div id="idContainer">
+            <textarea id="txtOutput" rows="10" style="margin-top: 10px; width: 98%;"
+             placeholder="Output" disabled></textarea>
+        </div>
         <div id="idText"></div>
-        <textarea id="txtOutput" rows="10" style="margin-top: 10px; width: 98%;" placeholder="Output" disabled></textarea>
-    </div>
+            </div>
+    <footer>
+        <p>© 2021 JARVIS | All rights reserved</p>
 
    <script src="./weather.js"></script>
    <script src="./chatgpt.js"></script>
