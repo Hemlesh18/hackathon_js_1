@@ -1,4 +1,4 @@
-var OPENAI_API_KEY = "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";
+var OPENAI_API_KEY = "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";
 var bTextToSpeechSupported = false;
 var bSpeechInProgress = false;
 var oSpeechRecognizer = null
@@ -56,8 +56,9 @@ function Send() {
  var googleMatch = sQuestion.match(googleSearchRegex);
  if (googleMatch) {
    var searchTerm = encodeURIComponent(googleMatch[1]);
-   window.location.href = "https://www.google.com/search?q=" + searchTerm;
-   return;
+    // in a blank tab
+    window.open("https://www.google.com/search?q=" + searchTerm);
+    return;
  }
 
  // check for youtube command
@@ -66,13 +67,14 @@ function Send() {
    var type = youtubeMatch[1];
    var searchTerm = encodeURIComponent(youtubeMatch[2]);
    if (type === "music") {
-     window.location.href = "https://www.youtube.com/results?search_query=" + searchTerm + "&sp=EgIQAQ%253D%253D";
+     // in a blank tab;
+      window.open("https://www.youtube.com/results?search_query=" + searchTerm);
    } else {
-     window.location.href = "https://www.youtube.com/results?search_query=" + searchTerm;
+    // in a blank tab
+    window.open("https://www.youtube.com/results?search_query=" + searchTerm);
    }
    return;
  }
-
   var oHttp = new XMLHttpRequest();
   oHttp.open("POST", "https://api.openai.com/v1/completions");
   oHttp.setRequestHeader("Accept", "application/json");
