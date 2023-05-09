@@ -1,4 +1,7 @@
 var mykey = config.OPENAI_API_KEY ;
+
+// var secretkey = config.SECRET_KEY;
+
 var bTextToSpeechSupported = false;
 var bSpeechInProgress = false;
 var oSpeechRecognizer = null
@@ -66,7 +69,7 @@ function Send() {
  if (youtubeMatch) {
    var type = youtubeMatch[1];
    var searchTerm = encodeURIComponent(youtubeMatch[2]);
-   if (type === "music") {
+   if (type === "music"||"play") {
      // in a blank tab;
       window.open("https://www.youtube.com/results?search_query=" + searchTerm);
    } else {
