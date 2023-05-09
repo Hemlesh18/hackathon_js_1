@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    background-image: url(../images//bg4.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    /* height: auto;
+
+    width: auto; */
+
+
+
+}
+.main{
+    display:flex;
+
+}
+.header {
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.icon{
+    font-size: 28px;
+    color: #d3cccc;
+    margin-left: 15px;
+}
+.container{
+    color: aliceblue;
+
+    display: flex;
+    align-items: flex-end;
+    margin-left: 18px;
+    width: -32px;
+
+    text-align: center;
+    border-left: -49px;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    left: -3vh;
+
+}
+.container .text{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+
+}
+
+.chat{
+    height: 15vh;
+}
+.chatBox {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+    align-content: center;
+    justify-content: center;
+    width: 104vh;
+    margin-left: 298px;
+    position: relative;
+    bottom: 48vh;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+
+    width: 104vh;
+    height: 10vh;
+}
+#idContainer{
+    opacity: 40%;
+    display: flex;
+    height: 71vh;
+
+
+}
+#id textarea{
+    color: rgb(216, 213, 213);
+    opacity: 0;
+
+}
+footer{
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    position: relative;
+    top: 215px;
+}
+.gptbtn{
+    cursor: pointer;
+    display: flex;
+    color: whitesmoke;
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+    margin-top: 0;
+    cursor: pointer;
+    display: flex;
+    color: whitesmoke;
+    cursor: pointer;
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 156vh;
+    position: relative;
+    top: 34vh;
+    font-size: 16px;
+}
+
+.gptbtn button{
+
+    background-color: #1e1e1e;
+    color: whitesmoke;
+    cursor: pointer;
+width: 69px;
+margin-bottom: -35px;
+
+
+}
+.startStop{
+       /* background-color: #1e1e1e; */
+       color: whitesmoke;
+       cursor: pointer;
+       /* width: 69px; */
+       margin-bottom: -35px;
+       margin-left: 0px;
+       position: relative;
+       /* left: 76vh; */
+       margin-left: 170vh;
+       top: 261px;
+}
+
+@media only screen and (max-width: 600px) {
+    *{
+        margin:0;
+        padding: 0;
+        /* background-image: url(../asset/bg5.jpeg); */
+        /* box-sizing: border-box; */
+    }
+    html{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    body {
+        background-image: url(../images/bg6.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
+        margin: 0 !important;
+        padding: 0 !important;
+
+
+    }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+        position: relative;
+        left: -17px;
+        bottom: 4vh;
+        right: -1px;
+    }
+    .chatBox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    margin-top: -32px;
+    position: relative;
+    right: 68vh;
+
+    }
+
+    .gptbtn{
+            display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* margin-top: 5px; */
+        position: relative;
+        right: 82vh;
+        top: 8vh;
+    }
+    .lang{
+        position: relative;
+        top: 4vh;
+        left: -51vh;
+    }
+
+    .icon{
+        font-size: 28px;
+        color: #d3cccc;
+        margin-left: 15px;
+        /* display: inline-block; */
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .chat{
+
+        width: 55vh;
+        position: relative;
+        top: 15vh;
+        /* display: flex; */
+    }
+    #idContainer{
+        opacity: 180%;
+        display: flex;
+        height: 21vh;
+        width: 82vh;
+        margin-left: 79px;
+        position: relative;
+        top: -21vh;
+        /* background-color: gray; */
+
+    }
+   .input{
+    width: 69vh;
+    position: relative;
+    top: 16vh;
+
+   }
+   #chkSpeak{
+    position: relative;
+
+   }
+   #lblSpeak{
+    position: relative;
+    /* top: 1vh; */
+    right: 16vh;
+    display: inline;
+    width: 31vh;
+    margin-top: 46px;
+    bottom: 45px;
+   }
+   #btnSend{
+    /* position: relative; */
+    position: relative;
+    /* margin-top: 8vh; */
+    bottom: 125px;
+    left: 5vh;
+   }
+   .startStop{
+    position: relative;
+    top: -8vh;
+    left: 67vh;
+    margin: 0;
+   }
+
+}
+
+
+
+
