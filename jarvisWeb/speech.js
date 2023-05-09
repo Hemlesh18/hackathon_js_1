@@ -486,7 +486,7 @@ function printBatteryStatus(batteryObject) {
   }%`;
   charge = batteryObject.level * 100
   if (batteryObject.charging === true) {
-    document.querySelector(".battery").style.width = "200px";
+    document.querySelector("#battery").style.width = "200px";
     document.querySelector("#battery").textContent = `${
       (batteryObject.level * 100).toFixed(2)
     }%`;
