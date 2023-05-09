@@ -6,38 +6,38 @@ const time = document.querySelector("#flock");
 // const  speakBtn = document.querySelector("#speak");
 
 // jarvis setup
-if (localStorage.getItem("jarvis_setup")!== null){
-    // weather()
-}
-// jarvis information set up
-const setup = document.querySelector(".jarvis_setup")
-if (localStorage.getItem("jarvis_setup") === null){
-    setup.style.display="block"
-    setup.querySelector("button").addEventListener("click", userInfo)
-}
-// userinfo function
-function userInfo(){
-    let setupInfo = {
-        name: setup.querySelectorAll("input")[0].value,
-        github: setup.querySelectorAll("input")[1].value,
-        }
+// if (localStorage.getItem("jarvis_setup")!== null){
 
-        let testArr=[]
-        setup.querySelectorAll("input").forEach((e)=>{
-            testArr.push(e.value)
-        })
-        if(testArr.includes("")){
-            readOut("sir enter your complete infomation")
-        }
-        else{
-            localStorage.clear()
-            localStorage.setItem("jarvis_setup", JSON.stringify(setupInfo))
-            setup.style.display="none"
+// }
+// jarvis information set up
+// const setup = document.querySelector(".jarvis_setup")
+// if (localStorage.getItem("jarvis_setup") === null){
+//     setup.style.display="block"
+//     setup.querySelector("button").addEventListener("click", userInfo)
+// }
+// userinfo function
+// function userInfo(){
+//     let setupInfo = {
+//         name: setup.querySelectorAll("input")[0].value,
+//         github: setup.querySelectorAll("input")[1].value,
+//         }
+
+//         let testArr=[]
+//         setup.querySelectorAll("input").forEach((e)=>{
+//             testArr.push(e.value)
+//         })
+//         if(testArr.includes("")){
+//             readOut("sir enter your complete infomation")
+//         }
+//         else{
+//             localStorage.clear()
+//             localStorage.setItem("jarvis_setup", JSON.stringify(setupInfo))
+//             setup.style.display="none"
 
             // weather(JSON.parse(localStorage.getItem("jarvis_setup")).location)
-        }
+    //     }
 
-    }
+    // }
 // speech
 function readOut(message){
     let speech = new SpeechSynthesisUtterance();
@@ -124,17 +124,6 @@ stopBtn.addEventListener("click", ()=>{
 recognition.continuous = true;
 }
 
-// some kind of example to see if it works
-// speakBtn.addEventListener("click", ()=>{
-//     readOut("hello bro")
-// })}
-
-// window.onload = function(){
-//     readOut("    ");
-// };
-// =======
-
-
 // // date and time
 setInterval(() => {
 let date = new Date();
@@ -144,13 +133,14 @@ let secs = date.getSeconds();
 let period = "AM";
 if (hrs == 0) hrs = 12;
 if (hrs > 12) {
-  hrs = hrs - 12;
-  period = "PM";
+hrs = hrs - 12;
+period = "PM";
+
 }
 hrs = hrs < 10 ? `0${hrs}` : hrs;
 mins = mins < 10 ? `0${mins}` : mins;
 secs = secs < 10 ? `0${secs}` : secs;
-time.textContent = `${hrs}:${mins}:${secs}`;
+time.textContent = `${hrs}:${mins}:${secs} ${period}`;
 }, 1000);
 
   // auto jarvis
