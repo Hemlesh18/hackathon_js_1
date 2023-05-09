@@ -79,9 +79,10 @@ body {
     justify-content: center;
     width: 104vh;
     margin-left: 298px;
-    position: fixed;
-    bottom: 4vh;
+    position: relative;
+    bottom: 48vh;
 }
+
 
 .input{
     display: flex;
@@ -289,14 +290,14 @@ margin-bottom: -35px;
     left: 63vh;
     margin: 0;
    }
-   .btn-primary{
+   /* .btn-primary{
     position: fixed;
     top: 305px;
     left: 5vh;
     margin: 9px;
 
 
-   }
+   } */
 
 }
 
