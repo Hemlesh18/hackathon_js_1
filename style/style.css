@@ -79,8 +79,8 @@ body {
     justify-content: center;
     width: 104vh;
     margin-left: 298px;
-    position: relative;
-    bottom: 48vh;
+    position: fixed;
+    bottom: 4vh;
 }
 
 .input{
